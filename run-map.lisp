@@ -44,20 +44,15 @@
         ((= position 1)
             (format nil "  - ~{~a ~^--> ~}" path))
         ((= position 2)
-            (format nil "  \\ ~{~a ~^--> ~}" path))
-    )
-)
+            (format nil "  \\ ~{~a ~^--> ~}" path))))
 (defun print-paths (paths)
     (progn
         (format t "   ~a \\~%" (print-path (nth 0 paths) 0))
         (format t "@  ~a -   !!!~%" (print-path (nth 1 paths) 1))
-        (format t "   ~a /~%" (print-path (nth 2 paths) 2))
-    )
-)
+        (format t "   ~a /~%" (print-path (nth 2 paths) 2))))
 
 
 (print-paths (list 
     (fix-nodes (make-path +rooms-per-path+ '()) 0)
     (fix-nodes (make-path +rooms-per-path+ '()) 0)
-    (fix-nodes (make-path +rooms-per-path+ '()) 0)
-))
+    (fix-nodes (make-path +rooms-per-path+ '()) 0)))
